@@ -222,8 +222,7 @@ This project demonstrates practical knowledge in:
 
 # Author
 
-Chokri Nouar, PhD
-
+## Chokri Nouar, PhD
 Cybersecurity Engineer | Cryptography Researcher | PQC & Network Security Enthusiast
 
 GitHub:
