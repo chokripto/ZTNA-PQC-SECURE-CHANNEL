@@ -1,34 +1,66 @@
 # ZTNA-PQC-SECURE-CHANNEL
 
-This project implements a Zero Trust Network Access prototype using post-quantum cryptography.
+# Zero Trust Secure Channel using Post-Quantum Cryptography (PQC)
 
-The client is never trusted by default. Every access request must pass through identity verification, device validation, policy evaluation, and a post-quantum secure channel establishment.
+## Overview
 
-## Core Concepts
+This project implements a prototype of a **Zero Trust Network Access (ZTNA)** architecture secured with **Post-Quantum Cryptography (PQC)**.
 
-- Zero Trust Network Access
-- Post-Quantum Cryptography
-- Kyber-based key establishment
-- AES-GCM secure channel
-- Identity-based access control
+The system follows the principle:
+
+> **Never Trust, Always Verify**
+
+Every client request must pass through:
+- Identity verification
+- Device validation
 - Policy-based authorization
-- Dockerized deployment
+- Post-quantum secure session establishment
 
-## Security Goals
+The project combines:
+- Zero Trust principles
+- Network Security
+- Identity-aware access control
+- Post-Quantum Cryptography
+- Secure communication architecture
 
-- Never trust, always verify
+---
+
+# Objectives
+
+The main objectives of this project are:
+
+- Design a secure Zero Trust communication architecture
 - Protect internal services from direct exposure
-- Establish quantum-resistant secure communication
-- Enforce access policies before granting service access
-- Log access decisions
+- Implement post-quantum secure key exchange using Kyber
+- Establish encrypted communication channels using AES-GCM
+- Enforce access policies before granting access
+- Demonstrate secure client-to-service communication
+- Simulate enterprise-grade ZTNA concepts
 
-## Technologies
+---
 
-- Python
-- liboqs
-- Kyber512
-- AES-GCM
-- HKDF
-- Docker
-- Docker Compose
-- 
+# Architecture
+
+```text
++------------------+
+|      Client      |
+| Identity + Token |
++---------+--------+
+          |
+          | Access Request
+          v
++--------------------------+
+|      ZTNA Gateway        |
+|--------------------------|
+| Identity Verification    |
+| Device Validation        |
+| Policy Engine            |
+| PQC Handshake (Kyber)    |
+| AES-GCM Secure Channel   |
++-------------+------------+
+              |
+              | Authorized Request
+              v
++--------------------------+
+|   Protected Service      |
++--------------------------+
