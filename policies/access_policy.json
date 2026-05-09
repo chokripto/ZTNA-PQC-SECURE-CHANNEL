@@ -1,0 +1,16 @@
+{
+  "default_decision": "DENY",
+  "users": {
+    "chokri": {
+      "roles": ["security-engineer", "researcher"],
+      "allowed_devices": ["trusted-laptop"],
+      "allowed_services": ["internal-api"]
+    }
+  },
+  "services": {
+    "internal-api": {
+      "upstream_path": "/resource",
+      "required_role": "security-engineer"
+    }
+  }
+}
