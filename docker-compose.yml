@@ -1,0 +1,37 @@
+services:
+  service:
+    build: .
+    container_name: ztna-protected-service
+    command: python src/service/service.py
+    networks:
+      - ztna-net
+
+  gateway:
+    build: .
+    container_name: ztna-gateway
+    command: python src/gateway/gateway.py
+    depends_on:
+      - service
+    environment:
+      - PROTECTED_SERVICE_URL=http://service:7000
+      - POLICY_PATH=/app/policies/access_policy.json
+    networks:
+      - ztna-net
+
+  client:
+    build: .
+    container_name: ztna-client
+    command: python src/client/client.py
+    depends_on:
+      - gateway
+    environment:
+      - GATEWAY_URL=http://gateway:8000
+      - USER_ID=chokri
+      - DEVICE_ID=trusted-laptop
+      - REQUESTED_SERVICE=internal-api
+    networks:
+      - ztna-net
+
+networks:
+  ztna-net:
+    driver: bridge
