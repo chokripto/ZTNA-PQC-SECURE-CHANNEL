@@ -63,7 +63,7 @@ The main objectives of this project are:
 |   Protected Service      |
 +--------------------------+
 
-```text
+```
 --------------------------------------------------
 
 # Core Security Features
@@ -133,7 +133,7 @@ ztna-pqc-secure-channel/
     └── service/
         ├── __init__.py
         └── protected_service.py
-
+```
 --------------------------------------------------
 
 # Threat Model
