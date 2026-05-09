@@ -169,7 +169,7 @@ docker-compose up --build
 --------------------------------------------------
 
 # Expected Output
-
+```text
 [gateway] ZTNA Gateway listening
 [service] Protected service listening
 [client] Sending identity claims
@@ -178,7 +178,7 @@ docker-compose up --build
 [gateway] PQC session established
 [client] Secure request sent
 [service] Protected resource accessed
-
+```
 --------------------------------------------------
 
 # Future Improvements
