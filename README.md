@@ -63,6 +63,7 @@ The main objectives of this project are:
 |   Protected Service      |
 +--------------------------+
 
+```text
 --------------------------------------------------
 
 # Core Security Features
